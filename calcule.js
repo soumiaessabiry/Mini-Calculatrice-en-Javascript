@@ -4,9 +4,10 @@
    var nbrdechar;  //nombre de caractaire sisire sur barr d'affichage.
    var dernierechar; //stocker le derniree caractaire sisire
    var charavantdernier;//stocker le caractaire avant derniree caractaire sisire
-   var oper=['+','-','*','/'];
+   var oper=['+','-','*','/','.'];
+  var premierechar=  barraffich.value ;
 
-// -------------- for function---------------//
+// ----------------------------------- for function-----------------------------------------------------//
     //1- function pour afficher le nombre de chaque inpute =number=>afficher le caracteresur screen://nbr paramaitre de function  
     function number(nbr){ 
         barraffich.value +=nbr;
@@ -14,6 +15,8 @@
         dernierechar=nbr;
         affcharavantdernier();//derniere char
         verificationchar();//char avant derniere
+        evitcompopert() ;
+        evitdivsur();
     }
     //2- function supprimer pour supprimer le contenu de barre d'affichage =s=>supprier le contenu de screen://spr paramaitre de function.  
     function supbaff(c){
@@ -37,8 +40,6 @@
             }else{ 
                 supencoperation();
             }
-            
-            
         }
     }
     // function pour supprimer si en trouve deux operation au meme temp[++ -- ..;]
@@ -51,3 +52,22 @@
         barraffich.value=barraffich.value.slice(0,nbrdechar-2)+barraffich.value.slice(nbrdechar-1);
 
     }
+    // eviter de commencer par une operation
+    function evitcompopert() {
+          premierechar=barraffich.value.slice(0);//afficher le premiere caractaire
+        // console.log(" le pemiere char et :"+premierechar);
+           nbrdechar=barraffich.value.length;
+        //  console.log(" le caractaire :"+nbrdechar);
+        if (nbrdechar==1 && oper.includes(premierechar) ) {
+            // barraffich.value=barraffich.value.substring(nbrdechar);
+            barraffich.value=document.getElementById("barreaffichage").innerHTML="Désolé Nous ne pouvons pas commencer par une operation ";
+        }
+    }
+    // eviter de diviser sur 0
+  function evitdivsur() {
+     if (dernierechar==0 && charavantdernier=='/' ) {
+         //barraffich.value=barraffich.value.substring(nbrdechar);
+        // document.getElementById("barreaffichage").innerHTML="Désolé... Nous ne pouvons pas diviser par zéro";
+        barraffich.value=document.getElementById("barreaffichage").innerHTML="Désolé...Nous ne pouvons pas diviser par zéro";
+    }
+  }

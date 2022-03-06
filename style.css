@@ -53,13 +53,19 @@ button:hover {
     font-weight: bold;
 }
 
-.btn-operator {
-    color: #180415;
+button.btn-operator {
+    background-color: rgba(88, 35, 73, 0.5);
+    color: #1f0d1c;
     font-weight: bolder;
 }
-.btn-equal:hover {
+button.btn-equal{
     color: #d3cdd2;
     background-color:rgb(83, 18, 65);
+    font-weight: bold;
+}
+.btn-equal:hover {
+    color: rgb(0, 0, 0);
+    background-color:rgba(243, 243, 243, 0.281);
     font-weight: bold;
 }
 .btn-operator:hover {
