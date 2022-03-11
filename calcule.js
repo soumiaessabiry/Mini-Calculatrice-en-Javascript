@@ -26,6 +26,8 @@
         function supbaff(c){
              barraffich.value ="";
             // suppbaraffparclic();
+            // doublepoint()
+            conteurpoint=0;
         }
     //3- Function de calcule:
         function operation(){
@@ -77,17 +79,18 @@
             }
        }
    // eviter de entrer deux point 
-        function doublepoint() {
-            if (dernierechar=='.') {
-                conteurpoint++;
-                //   console.log("eroor");
-                //   console.log("cont =" +conteurpoint);
-                if (conteurpoint ==2) {
-                    barraffich.value=document.getElementById("barreaffichage").innerHTML="Désolé Nous ne pouvons pas taper deux point au meme temps";
-                    // console.log("eroooooooor");
-                }
-            }
-        }
+        // function doublepoint() {
+        //     if (dernierechar=='.') {
+        //         conteurpoint++;
+        //         //   console.log("eroor");
+        //         //   console.log("cont =" +conteurpoint);
+        //         if (conteurpoint ==2) {
+        //             barraffich.value=document.getElementById("barreaffichage").innerHTML="Désolé Nous ne pouvons pas taper deux point au meme temps";
+        //             // console.log("eroooooooor");
+        //         }
+        //     }
+        // }
+        // **********************
     // supprimer le derniere enter sur l'ecrent si en click
     // function suppbaraffparclic() {
     //    if (onclick.supbaff(c)) {
@@ -95,3 +98,20 @@
     //        supbaff(c);
     //    }
     // }
+       function doublepoint(){
+           
+        if (dernierechar=='.') {
+            
+            conteurpoint++;
+            console.log("conteurpoint"+conteurpoint);
+            if ( dernierechar=='.' && conteurpoint!=1 ) {
+                barraffich.value = barraffich.value.substring(0,  barraffich.value.length - 1);
+               console.log("supp .");
+             
+            }
+
+            
+        }
+            
+        
+       }
