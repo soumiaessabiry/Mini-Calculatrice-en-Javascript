@@ -7,6 +7,7 @@
    var premierechar=  barraffich.value ;
    var conteurpoint=0;
    var valeur = barraffich.value; 
+   var contoper=0;
 
 // ----------------------------------- for functions-----------------------------------------------------//
     //1- function pour afficher le nombre de chaque inpute =number=>afficher le caracteresur screen://nbr paramaitre de function  
@@ -19,7 +20,7 @@
             evitcompopert();
             evitdivsur();
             doublepoint() ;
-        //    suppbaraffparclic();
+            opersoneval();
            
         }
     //2- function supprimer pour supprimer le contenu de barre d'affichage =s=>supprier le contenu de screen://spr paramaitre de function.  
@@ -28,6 +29,9 @@
             // suppbaraffparclic();
             // doublepoint()
             conteurpoint=0;
+            // supcharparchar();
+            contoper=0;
+           
         }
     //3- Function de calcule:
         function operation(){
@@ -115,3 +119,20 @@
             
         
        }
+    //    function chongethme(){
+    //        document.getElementById('calculatrice').style.background='yellow';
+    //        document.querySelector('.row').style.background='#c73fb2';
+           
+    //    }
+    function supcharparchar(){
+        if (supbaff) {
+            barraffich.value = barraffich.value.substring(0,  barraffich.value.length - 1);
+        }
+    }
+    // function opersoneval() {
+    //   if (oper.includes(dernierechar)) {
+    //       contoper++;
+    //       console.log("operation"+contoper);
+    //       console.log( barraffich.value = barraffich.value.substring(0, contoper-1));
+    //   }
+    // }

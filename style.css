@@ -9,16 +9,26 @@ body{
     background-image: linear-gradient( to bottom right, rgb(147, 108, 219),rgb(83, 18, 65));
 }
 #calculatrice{
+    padding-top: 70px;
     background-color:rgb(106, 81, 146);
     /* width: 400px; */
     height: 700px;
-    /* padding-left: 12px;
-    padding-right: 12px; */
+     padding-left: 22px;
+    padding-right: 22px; 
     border-radius:30px;
 }
 .row{
     display: flex;
     height: 100px;
+}
+button.changethem{
+    display: block;
+    margin-left: 400px;
+    margin-right: auto;
+    text-align: center;
+    
+ 
+    
 }
 input[type="text"]{
     flex: 1;
@@ -33,6 +43,7 @@ input[type="text"]{
 
 
 }
+
  button{ /*pour prend tous esoace trouve sur chaqe ligne */
     flex: 1;
     outline: none;
