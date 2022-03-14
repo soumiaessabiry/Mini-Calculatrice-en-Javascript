@@ -3,6 +3,7 @@
    var nbrdechar;  //nombre de caractaire sisire sur barr d'affichage.
    var dernierechar; //stocker le derniree caractaire sisire
    var charavantdernier;//stocker le caractaire avant derniree caractaire sisire
+   var charavantdernier=barraffich.value.substring(nbrdechar-2,nbrdechar-1);
    var oper=['+','-','*','/','.'];
    var premierechar=  barraffich.value ;
    var conteurpoint=0;
@@ -20,8 +21,7 @@
             evitcompopert();
             evitdivsur();
             doublepoint() ;
-            opersoneval();
-           
+            dbpointavecoper();
         }
     //2- function supprimer pour supprimer le contenu de barre d'affichage =s=>supprier le contenu de screen://spr paramaitre de function.  
         function supbaff(c){
@@ -57,11 +57,12 @@
         function supdoboper() {
             barraffich.value=barraffich.value.substring(0,nbrdechar-1);
             // alert("suppen meme type");
+            
         }
     // function  qui enregistre la derniere operation et supprimer lenciene operation 
         function supencoperation(){
             barraffich.value=barraffich.value.slice(0,nbrdechar-2)+barraffich.value.slice(nbrdechar-1);
-
+           
         }
     // eviter de commencer par une operation
         function evitcompopert() {
@@ -82,57 +83,28 @@
                 barraffich.value=document.getElementById("barreaffichage").innerHTML="Désolé...Nous ne pouvons pas diviser par zéro";
             }
        }
-   // eviter de entrer deux point 
-        // function doublepoint() {
-        //     if (dernierechar=='.') {
-        //         conteurpoint++;
-        //         //   console.log("eroor");
-        //         //   console.log("cont =" +conteurpoint);
-        //         if (conteurpoint ==2) {
-        //             barraffich.value=document.getElementById("barreaffichage").innerHTML="Désolé Nous ne pouvons pas taper deux point au meme temps";
-        //             // console.log("eroooooooor");
-        //         }
-        //     }
-        // }
-        // **********************
-    // supprimer le derniere enter sur l'ecrent si en click
-    // function suppbaraffparclic() {
-    //    if (onclick.supbaff(c)) {
-    //        console.log("dern".dernierechar="");
-    //        supbaff(c);
-    //    }
-    // }
-       function doublepoint(){
-           
-        if (dernierechar=='.') {
-            
-            conteurpoint++;
-            console.log("conteurpoint"+conteurpoint);
-            if ( dernierechar=='.' && conteurpoint!=1 ) {
-                barraffich.value = barraffich.value.substring(0,  barraffich.value.length - 1);
-               console.log("supp .");
-             
+    // eviter d'eviter double point :
+        function doublepoint(){
+            if (dernierechar=='.') {
+                conteurpoint++;
+                console.log("conteurpoint"+conteurpoint);
+                if ( dernierechar=='.' && conteurpoint!=1 ) {
+                    barraffich.value = barraffich.value.substring(0,  barraffich.value.length - 1);
+                console.log("supp .");
+                
+                }  
+            }  
+        }
+    // eviter d'eviter double point avec operation :
+        function dbpointavecoper(){
+            if((dernierechar=="+"||dernierechar=="-"||dernierechar=="*"||dernierechar=="/")){
+                conteurpoint=0;
             }
-
-            
-        }
-            
-        
-       }
-    //    function chongethme(){
-    //        document.getElementById('calculatrice').style.background='yellow';
-    //        document.querySelector('.row').style.background='#c73fb2';
-           
-    //    }
-    function supcharparchar(){
-        if (supbaff) {
-            barraffich.value = barraffich.value.substring(0,  barraffich.value.length - 1);
-        }
+        }   
+    //supprimer char par char  
+        function supcharparchar(){
+            if (supbaff) {
+                barraffich.value = barraffich.value.substring(0,  barraffich.value.length - 1);
+            }
     }
-    // function opersoneval() {
-    //   if (oper.includes(dernierechar)) {
-    //       contoper++;
-    //       console.log("operation"+contoper);
-    //       console.log( barraffich.value = barraffich.value.substring(0, contoper-1));
-    //   }
-    // }
+   
