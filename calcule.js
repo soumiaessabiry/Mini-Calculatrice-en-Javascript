@@ -22,6 +22,7 @@
             evitdivsur();
             doublepoint() ;
             dbpointavecoper();
+            operation();
         }
     //2- function supprimer pour supprimer le contenu de barre d'affichage =s=>supprier le contenu de screen://spr paramaitre de function.  
         function supbaff(c){
